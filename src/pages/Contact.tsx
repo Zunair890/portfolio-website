@@ -103,7 +103,7 @@ const Contact = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto">
             <h1 className="text-3xl md:text-4xl font-bold mb-4">
-              <span className="text-highlight mr-2 font-mono text-2xl">04.</span> Get In Touch
+              <span className="text-highlight mr-2 font-mono text-2xl">06.</span> Get In Touch
             </h1>
             <div className="w-20 h-1 bg-highlight mb-12"></div>
             
