@@ -19,7 +19,7 @@ const Footer = () => {
           <div className="flex flex-col md:flex-row items-center gap-6">
             <div className="flex space-x-4">
               <a 
-                href="https://github.com" 
+                href="https://github.com/Zunair890" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-slate hover:text-highlight transition-colors"
@@ -27,7 +27,7 @@ const Footer = () => {
                 <Github size={20} />
               </a>
               <a 
-                href="https://linkedin.com" 
+                href="https://www.linkedin.com/in/zunair-ali890/" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-slate hover:text-highlight transition-colors"
@@ -35,7 +35,7 @@ const Footer = () => {
                 <Linkedin size={20} />
               </a>
               <a 
-                href="https://twitter.com" 
+                href="https://x.com/zunairali05?s=08" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-slate hover:text-highlight transition-colors"
@@ -43,7 +43,7 @@ const Footer = () => {
                 <Twitter size={20} />
               </a>
               <a 
-                href="mailto:email@example.com" 
+                href="mailto:ranazunairali007@gmail.com" 
                 className="text-slate hover:text-highlight transition-colors"
               >
                 <Mail size={20} />
@@ -53,8 +53,8 @@ const Footer = () => {
         </div>
         
         <div className="mt-8 pt-6 border-t border-navy-light text-center text-slate text-xs">
-          <p>© {new Date().getFullYear()} Your Name. All rights reserved.</p>
-          <p className="mt-2">Built with React, TypeScript, and Tailwind CSS</p>
+          <p className='font-medium text-base'>©     Zunair Ali. All rights reserved.</p>
+       
         </div>
       </div>
     </footer>

@@ -35,7 +35,7 @@ const Navbar = () => {
   return (
     <header className={`fixed w-full z-40 transition-all duration-300 ${scrolled ? 'bg-navy/95 shadow-md backdrop-blur-sm py-4' : 'bg-transparent py-6'}`}>
       <div className="container mx-auto px-4 md:px-6 flex justify-between items-center">
-        <Link to="/" className="text-2xl font-mono font-bold text-highlight">
+        <Link to="/" className="ml-4 text-2xl font-mono font-bold text-highlight">
           DEV<span className="text-slate-light">.FOLIO</span>
         </Link>
         

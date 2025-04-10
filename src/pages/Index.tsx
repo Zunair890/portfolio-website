@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowDown, ArrowRight, Download, Github } from 'lucide-react';
+import { ArrowDown, ArrowRight, Download, Github, Mail } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { scrollToSection, getGitHubUrls, GITHUB_USERNAME } from '@/lib/utils';
 
@@ -176,7 +176,7 @@ const Index = () => {
       <section id="projects-preview">
         <div className="container mx-auto">
           <h2 className="section-heading ">
-            <span className="text-highlight mr-2">04.</span> Featured Projects
+            <span className="text-highlight mr-2">04.</span> Projects
           </h2>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -227,7 +227,7 @@ const Index = () => {
       <section id="skills-preview" className="bg-navy-light">
         <div className="container mx-auto">
           <h2 className="section-heading">
-            <span className="text-highlight mr-2">03.</span> My Skills
+            <span className="text-highlight mr-2">05.</span> My Skills
           </h2>
           
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
@@ -270,83 +270,35 @@ const Index = () => {
         </div>
       </section>
       
-      {/* GitHub Stats Section */}
-      <section id="github-stats" className="py-20">
-        <div className="container mx-auto">
-          <h2 className="section-heading">
-            <span className="text-highlight mr-2">04.</span> GitHub Contributions
-          </h2>
-          
-          <div className="flex flex-col gap-8 items-center">
-            {/* GitHub contribution chart */}
-            <div className="w-full">
-              <div className="card-gradient rounded-lg p-6 overflow-hidden">
-                <h3 className="text-xl font-mono mb-4 text-slate-light">GitHub Activity</h3>
-                <div className="relative w-full">
-                  <img 
-                    src={githubUrls.contributionChart}
-                    alt="GitHub Contribution Graph" 
-                    className="w-full object-cover rounded-md h-32 md:h-40"
-                    style={{backgroundColor: '#0D1117'}}
-                  />
-                </div>
-                <p className="text-slate text-sm mt-4 text-center">My GitHub contributions over time</p>
-              </div>
-            </div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
-              {/* GitHub stats card */}
-              <div className="card-gradient rounded-lg p-6 h-full">
-                <h3 className="text-lg font-mono mb-4 text-slate-light">GitHub Stats</h3>
-                <div className="flex items-center justify-center">
-                  <img 
-                    src={githubUrls.statsCard}
-                    alt="GitHub Stats"
-                    className="max-w-full h-auto rounded-md"
-                  />
-                </div>
-              </div>
-              
-              {/* Top languages card */}
-              <div className="card-gradient rounded-lg p-6 h-full">
-                <h3 className="text-lg font-mono mb-4 text-slate-light">Top Languages</h3>
-                <div className="flex items-center justify-center">
-                  <img 
-                    src={githubUrls.topLangsCard}
-                    alt="Top Languages"
-                    className="max-w-full h-auto rounded-md"
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-          
-          <div className="mt-10 text-center">
-            <a 
-              href={githubUrls.profile}
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="button-primary inline-flex items-center gap-2"
-            >
-              <Github size={16} /> Visit My GitHub
-            </a>
-          </div>
-        </div>
-      </section>
+      
       
       {/* Contact CTA Section */}
       <section id="contact-cta" className="py-20">
-        <div className="container mx-auto text-center max-w-2xl">
-          <h2 className="text-4xl font-mono text-slate-light mb-4">Get In Touch</h2>
-          <p className="text-slate mb-8">
-            I'm currently looking for new opportunities. Whether you have a question or just want to say hi,
-            I'll try my best to get back to you!
-          </p>
-          <Link to="/contact">
-            <Button className="button-primary">
-              Say Hello
-            </Button>
-          </Link>
+        <div className="container mx-auto">
+          <h2 className="section-heading">
+            <span className="text-highlight mr-2 font-mono text-2xl">06.</span> Get In Touch
+          </h2>
+          
+          <div className="max-w-3xl mx-auto">
+            <div className="card-gradient rounded-lg p-8 border border-highlight/10 shadow-lg text-center">
+              <p className="text-slate mb-6 text-base md:text-lg">
+                I'm currently looking for new opportunities. Whether you have a question or just want to say hi,
+                I'll try my best to get back to you!
+              </p>
+              
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8">
+                <a href="mailto:ranazunairali007@gmail.com" className="button-highlight flex items-center gap-2 px-6 py-3 hover:transform hover:scale-[1.02] transition-all">
+                  <Mail size={18} /> Email Me
+                </a>
+                
+                <Link to="/contact">
+                  <Button className="button-primary flex items-center gap-2 px-6 py-3 hover:transform hover:scale-[1.02] transition-all">
+                    Say Hello <ArrowRight size={18} />
+                  </Button>
+                </Link>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
     </>

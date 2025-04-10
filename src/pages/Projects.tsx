@@ -8,61 +8,71 @@ const projectsData = [
   {
     id: 1,
     title: "E-Commerce Platform",
-    description: "A full-stack e-commerce application with user authentication, product catalog, shopping cart, and payment integration.",
+    description: "A full-stack e-commerce application with user auth, product catalog, shopping cart, and payment integration.",
     image: "/ecommerce.png",
-    tags: ["React", "Node.js", "Express", "MongoDB", "Redux", "Stripe"],
+    tags: ["React", "Node", "Express", "MongoDB", "Redux", "Stripe"],
     liveUrl: "https://example.com",
-    githubUrl: "https://github.com",
-    featured: true
-  },
-  {
-    id: 3,
-    title: "Task Management System",
-    description: "A Kanban-style task management application with drag-and-drop interfaces, task assignments, and progress tracking.",
-    image: "/auth.png",
-    tags: ["React", "TypeScript", "Node.js", "Express", "MongoDB"],
-    liveUrl: "https://example.com",
-    githubUrl: "https://github.com",
+    githubUrl: "https://github.com/Zunair890/Forever_Ecommerce-app",
     featured: true
   },
   {
     id: 2,
-    title: "Real-Time Chat Application",
-    description: "A chat platform with real-time messaging, user presence indicators, and message history using Socket.io.",
-    image: "/chat.png",
-    tags: ["React", "Socket.io", "Express", "MongoDB", "JWT"],
+    title: "Authentication System",
+    description: "A full stack authentication system with user registration, login, and session management.",
+    image: "/auth.png",
+    tags: ["React", "Node", "Node", "Express", "MongoDB"],
     liveUrl: "https://example.com",
-    githubUrl: "https://github.com",
+    githubUrl: "https://github.com/Zunair890/MERN-authenication-system",
+    featured: true
+  },
+  {
+    id: 3,
+    title: "Smart Learn AI",
+    description: "A chatbot application for educational purposes, providing interactive learning experiences.",
+    image: "/smartlearn.png",
+    tags: ["React", "Typescript", "Node", "Express", "MongoDB",],
+    liveUrl: "https://example.com",
+    githubUrl: "https://github.com/Zunair890/SmartLearn_AI",
     featured: true
   },
   {
     id: 4,
-    title: "Weather Dashboard",
-    description: "A weather application that provides current conditions and forecasts based on location with interactive maps.",
-    image: "/placeholder.svg",
-    tags: ["React", "OpenWeatherAPI", "Chart.js", "Tailwind CSS"],
+    title: "Cryptoverse ",
+    description: "A crypto based application that provides crypto news, price, and market cap, ands much more.",
+    image: "/cyrpto.png",
+    tags: ["React", "RTK", "Chart.js", "Tailwind CSS"],
     liveUrl: "https://example.com",
     githubUrl: "https://github.com",
     featured: true
   },
   {
     id: 5,
-    title: "Recipe Finder",
-    description: "A recipe search application that allows users to find recipes based on ingredients they have available.",
+    title: "Pantry tracker",
+    description: "A pantry management application that allows users to track their pantry items and expiration dates.",
     image: "/placeholder.svg",
-    tags: ["React", "Context API", "Spoonacular API", "CSS Modules"],
+    tags: ["React", "Context API", "Tailwind CSS", "MUI"],
     liveUrl: "https://example.com",
-    githubUrl: "https://github.com",
+    githubUrl: "https://github.com/Zunair890/Pantry-Tracker_Firebase",
     featured: false
   },
   {
     id: 6,
-    title: "Developer Blog",
-    description: "A personal blog with Markdown support, code syntax highlighting, and a responsive design.",
+    title: "Linkedin Clone",
+    description: "A linkedin clone application that allows users to connect with others and share their experiences.",
+    image: "/placeholder.svg",
+    tags: ["React", "RTK", "Tailwind CSS", "VercelFirebase"],
+    liveUrl: "https://example.com",
+    githubUrl: "https://github.com/Zunair890/LinkedIn-Clone-2.0",
+    featured: false
+  },
+  {
+    id: 7,
+    title: "Imagify-Text to Image",
+    description: "A text to image application that allows users to generate images from text.",
     image: "/placeholder.svg",
     tags: ["Next.js", "MDX", "Tailwind CSS", "Vercel"],
     liveUrl: "https://example.com",
-    githubUrl: "https://github.com",
+    githubUrl: "https://github.com/Zunair890/Imagify-Text-to-Image",
     featured: false
   }
 ];
@@ -97,7 +107,7 @@ const Projects = () => {
     <>
       <section className="pt-28 sm:pt-30 md:pt-32 pb-16 md:pb-20">
         <div className="container mx-auto">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">
+          <h1 className="text-3xl md:text-4xl font-bold mb-4">
             <span className="text-highlight mr-2 font-mono text-2xl">04.</span> My Projects
           </h1>
           <div className="w-20 h-1 bg-highlight mb-12"></div>
@@ -123,7 +133,7 @@ const Projects = () => {
           
           {/* Featured Projects - Horizontal Grid Layout */}
           <h2 className="text-3xl font-bold mb-8  text-slate-light">
-            <span className="text-highlight mr-2 font-mono">01.</span> Featured Projects
+            <span className="text-highlight mr-2 font-mono"></span> Featured Projects
           </h2>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mx-3 mb-28">
@@ -151,8 +161,8 @@ const Projects = () => {
                 {/* Project Info */}
                 <div className="p-6 flex-grow flex flex-col">
                   <div className="mb-auto">
-                    <p className="font-mono text-highlight mb-1">Featured Project</p>
-                    <h3 className="text-xl font-bold text-slate-light mb-3">{project.title}</h3>
+                    
+                    <h3 className="text-xl font-medium text-highlight mb-3">{project.title}</h3>
                     <p className="text-slate mb-4">{project.description}</p>
                     
                     {/* Project Links */}
@@ -167,16 +177,7 @@ const Projects = () => {
                         <Github size={18} />
                         <span className="text-sm">Source Code</span>
                       </a>
-                      <a 
-                        href={project.liveUrl} 
-                        target="_blank" 
-                        rel="noopener noreferrer" 
-                        className="flex items-center gap-2 text-slate-light hover:text-highlight transition-colors"
-                        aria-label="View live site"
-                      >
-                        <ExternalLink size={18} />
-                        <span className="text-sm">Live Demo</span>
-                      </a>
+                      
                     </div>
                   </div>
                   
@@ -197,7 +198,7 @@ const Projects = () => {
           
           {/* Other Projects - Grid Layout */}
           <h2 className="text-3xl font-bold mb-8 text-slate-light">
-            Other Noteworthy Projects
+            Other Projects
           </h2>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -222,15 +223,7 @@ const Projects = () => {
                     >
                       <Github size={20} className={`transform transition-transform duration-300 ${hoveredCard === project.id ? 'scale-110' : ''}`} />
                     </a>
-                    <a 
-                      href={project.liveUrl} 
-                      target="_blank" 
-                      rel="noopener noreferrer" 
-                      className="text-slate-light hover:text-highlight transition-colors"
-                      aria-label="View live site"
-                    >
-                      <ExternalLink size={20} className={`transform transition-transform duration-300 ${hoveredCard === project.id ? 'scale-110' : ''}`} />
-                    </a>
+                    
                   </div>
                 </div>
                 
@@ -254,7 +247,7 @@ const Projects = () => {
           <div className="text-center mt-16">
             <p className="text-slate mb-5">Interested in seeing more of my work?</p>
             <a 
-              href="https://github.com/yourusername" 
+              href="https://github.com/Zunair890" 
               target="_blank" 
               rel="noopener noreferrer" 
               className="button-primary inline-flex items-center gap-2"

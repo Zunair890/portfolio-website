@@ -52,7 +52,7 @@ const Experience = () => {
   return (
     <section className="pt-24 sm:pt-28 md:pt-32 pb-16 md:pb-20">
       <div className="container mx-auto">
-        <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
+        <h1 className="text-3xl sm:text-3xl md:text-4xl font-bold mb-4">
           <span className="text-highlight mr-2 font-mono text-xl sm:text-2xl">03.</span> Experience
         </h1>
         <div className="w-20 h-1 bg-highlight mb-10"></div>
