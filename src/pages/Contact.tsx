@@ -3,7 +3,7 @@ import { Button } from '@/components/ui/button';
 import { useToast } from '@/hooks/use-toast';
 import { Mail, Phone, MapPin, Send, AlertTriangle, ArrowRight } from 'lucide-react';
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
-import emailjs from 'emailjs-com';
+import emailjs from '@emailjs/browser';
 
 const Contact = () => {
   const [name, setName] = useState('');
@@ -19,23 +19,27 @@ const Contact = () => {
     window.scrollTo(0, 0);
   }, []);
 
+  // EmailJS configuration constants
+  const USER_ID = "EMgUG06WAALDulTEV";
+  const SERVICE_ID = "service_cbateeg";
+  const TEMPLATE_ID = "template_tuqve18";
+
   // Initialize EmailJS with your user ID
   useEffect(() => {
     // Check if EmailJS is properly configured
-    const userID = "EMgUG06WAALDulTEV";
-    const serviceID = "service_cbateeg";
-    const templateID = "template_snxn7vu";
-    
-    if (
-      userID === "EMgUG06WAALDulTEV" && 
-      serviceID === "service_cbateeg" && 
-      templateID === "template_snxn7vu"
-    ) {
-      // Initialize with the public key (userID)
-      emailjs.init(userID);
-      setSetupError(false);
+    if (USER_ID && SERVICE_ID && TEMPLATE_ID) {
+      try {
+        // Initialize with the public key (userID)
+        emailjs.init(USER_ID);
+        setSetupError(false);
+        console.log("EmailJS initialized successfully");
+      } catch (error) {
+        console.error("EmailJS initialization error:", error);
+        setSetupError(true);
+      }
     } else {
-      setSetupError(false);
+      console.error("EmailJS configuration missing");
+      setSetupError(true);
     }
   }, []);
 
@@ -48,7 +52,8 @@ const Contact = () => {
       toast({
         title: "Configuration Error",
         description: "EmailJS is not properly configured. Please contact me directly via email.",
-        variant: "destructive"
+        duration: 5000,
+        className: "bg-navy border-highlight text-slate-light font-medium",
       });
       return;
     }
@@ -67,17 +72,19 @@ const Contact = () => {
       };
       
       const result = await emailjs.send(
-        'service_cbateeg', // Your EmailJS Service ID
-        'template_snxn7vu', // Your EmailJS Template ID
+        SERVICE_ID,
+        TEMPLATE_ID,
         templateParams,
-        'EMgUG06WAALDulTEV' // Add your public key here as well for redundancy
+        USER_ID
       );
       
       console.log('Email sent successfully:', result);
       
       toast({
-        title: "Message sent!",
-        description: "I'll get back to you as soon as possible.",
+        title: "Message Sent Successfully!",
+        description: "Thank you for reaching out. I'll get back to you as soon as possible.",
+        duration: 6000,
+        className: "bg-navy border-highlight text-slate-light font-medium",
       });
       
       // Reset form
@@ -88,9 +95,10 @@ const Contact = () => {
     } catch (error) {
       console.error('Error sending email:', error);
       toast({
-        title: "Error sending message",
+        title: "Error Sending Message",
         description: "Please try again or contact me directly via email.",
-        variant: "destructive"
+        duration: 5000,
+        className: "bg-navy border-red-500 text-slate-light font-medium",
       });
     } finally {
       setIsSubmitting(false);
@@ -217,7 +225,7 @@ const Contact = () => {
                         value={subject}
                         onChange={(e) => setSubject(e.target.value)}
                         className="w-full px-4 py-3 bg-navy/60 text-slate-light rounded-md border border-navy-light/50 focus:border-highlight focus:outline-none transition-colors"
-                        placeholder="Subject"
+                        placeholder="Subject of your message"
                         required
                       />
                     </div>
@@ -228,14 +236,13 @@ const Contact = () => {
                         id="message"
                         value={message}
                         onChange={(e) => setMessage(e.target.value)}
-                        rows={5}
-                        className="w-full px-4 py-3 bg-navy/60 text-slate-light rounded-md border border-navy-light/50 focus:border-highlight focus:outline-none resize-none transition-colors"
+                        className="w-full px-4 py-3 bg-navy/60 text-slate-light rounded-md border border-navy-light/50 focus:border-highlight focus:outline-none transition-colors min-h-[150px]"
                         placeholder="Your message"
                         required
                       ></textarea>
                     </div>
                     
-                    <div className="pt-2">
+                    <div className="flex justify-end">
                       <Button 
                         type="submit" 
                         className="button-highlight w-full md:w-auto px-8 py-3 flex items-center justify-center gap-2 hover:transform hover:scale-[1.02] transition-all"
