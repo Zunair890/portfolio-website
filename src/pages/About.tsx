@@ -57,7 +57,7 @@ const About = () => {
             <div className="md:w-1/4 group relative mx-7">
               <div className="relative z-10 rounded-md overflow-hidden">
                 <img 
-                  src="/lovable-uploads/873d9725-4689-457c-8744-8436e5e37567.png" 
+                  src="/images/profile.png" 
                   alt="Zunair Ali" 
                   className="mx-auto w-full h-auto object-cover rounded-md hover:scale-[1.02] transition-all duration-300"
                 />
