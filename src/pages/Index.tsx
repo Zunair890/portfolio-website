@@ -99,13 +99,13 @@ const Index = () => {
             <div className="md:w-1/4 group relative ">
               <div className="relative z-10 rounded-md overflow-hidden">
                 <img 
-                  src="/images/profile.png" 
+                  src="/images/profile.jpg" 
                   alt="Zunair Ali" 
-                  className="w-64 h-64 object-cover rounded-md hover:scale-[1.02] transition-all duration-300"
+                  className="w-60 h-60 ml-7 object-cover rounded-md "
                 />
-                <div className="absolute inset-0 bg-highlight/10 mix-blend-overlay group-hover:opacity-0 transition-opacity"></div>
+               
               </div>
-              <div className="absolute -bottom-3 -right-3 w-64 h-64 border-2 border-highlight rounded-md group-hover:translate-x-1 group-hover:translate-y-1 transition-transform duration-300"></div>
+              <div className="absolute -bottom-3 -right-3 w-60 h-60 border-2 border-highlight rounded-md "></div>
             </div>
           </div>
           
